@@ -1,0 +1,27 @@
+---
+version: "3"
+services:
+  movie:
+    image: pasha017/phonepaymovies:v1
+    ports:
+      - 8000:80
+    volumes:
+      - volume1
+    deploy:
+      replicas: 4
+  train:
+    image: pasha017/phonepaytrains:v1
+    volumes:
+      - volume2
+    ports:
+      - 8001:80
+    deploy:
+      replicas: 4
+  recharge:
+    image: pasha017/phonepayrecharges:v1
+    volumes:
+      - volume3
+    ports:
+      - 8002:80
+    deploy:
+      replicas: 4
